@@ -1,0 +1,7 @@
+{
+  "name": "TruthDare",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
