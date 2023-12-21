@@ -1,3 +1,21 @@
-<p>
-  game works!
-</p>
+<div class="challenge-ctn f-center">
+  <div class="challenge f-center">
+    <div class="type">
+      {{ challenge.props.type }}
+    </div>
+    <div class="description">
+      {{ challenge.props.description }}
+    </div>
+    <div class="points">
+      {{ challenge.props.points }}pts
+    </div>
+  </div>
+  <div class="btn-ctn">
+    <button (click)="unvalidate()" class="unvalidate f-center">
+      <ion-icon name="close-outline"></ion-icon>
+    </button>
+    <button (click)="validate(challenge.props.points)" class="validate f-center">
+      <ion-icon name="checkmark-outline"></ion-icon>
+    </button>
+  </div>
+</div>

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { GameService } from '../../services/game.service';
+import { Challenge } from 'src/app/core/models/challenge';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-game',
@@ -7,8 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GameComponent  implements OnInit {
 
-  constructor() { }
+  protected challenge: Challenge = this.gameService.getChallenge();
 
-  ngOnInit() {}
+  constructor(
+    private gameService: GameService,
+    private router: Router,
+  ) { }
 
+  ngOnInit() { }
+
+  unvalidate() {
+    this.nextChallenge();
+  }
+
+  validate(score: number) {
+    this.gameService.gainScore(score);
+    this.nextChallenge();
+  }
+
+  nextChallenge() {
+    if (this.gameService.checkEnd()) {
+      this.router.navigate(['/game/end']);
+    }
+    this.challenge = this.gameService.getChallenge();
+  }
 }
