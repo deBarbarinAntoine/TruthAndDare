@@ -1,0 +1,13 @@
+.error-ctn {
+    flex: 1;
+    .error-404 {
+        flex-direction: column;
+        padding: 20px;
+        .code {
+            font-size: 3em;
+        }
+        .error-message {
+            font-size: 1.5em;
+        }
+    }
+}

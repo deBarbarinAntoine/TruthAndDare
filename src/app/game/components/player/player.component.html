@@ -1,0 +1,7 @@
+<div class="game-ctn f-center">
+  <form [formGroup]="playersForm" class="f-center" (ngSubmit)="onSubmit()">
+    <input formControlName="player1" type="text" placeholder="Player 1">
+    <input formControlName="player2" type="text" placeholder="Player 2">
+    <button type="submit">Play</button>
+  </form>
+</div>

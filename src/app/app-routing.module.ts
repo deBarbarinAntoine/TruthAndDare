@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { ErrorComponent } from './game/components/error/error.component';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    path: 'game',
+    loadChildren: () => import('./game/game.module').then( m => m.GameModule)
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'game',
     pathMatch: 'full'
   },
+  { path: '**', component: ErrorComponent },
 ];
 
 @NgModule({

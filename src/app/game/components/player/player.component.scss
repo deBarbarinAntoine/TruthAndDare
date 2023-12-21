@@ -1,0 +1,22 @@
+.game-ctn {
+    flex: 1;
+    form {
+        color: var(--dark);
+        flex-direction: column;
+        gap: 20px;
+        input {
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 0px;
+            outline: none;
+        }
+        button[type="submit"] {
+            width: 150px;
+            font-size: 1.5em;
+            padding: 16px;
+            border-radius: 20px;
+            background-color: var(--primary);
+            color: var(--t);
+        }
+    }
+}
