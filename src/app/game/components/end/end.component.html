@@ -1,4 +1,5 @@
 <div class="end-ctn">
     <div>{{ winner.name }} won!</div>
     <div>{{ winner.score }}pts</div>
+    <button class="replay" routerLink="/game/play" (click)="gameService.replay()">Replay</button>
 </div>

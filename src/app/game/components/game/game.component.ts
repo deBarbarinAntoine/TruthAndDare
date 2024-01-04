@@ -13,7 +13,7 @@ export class GameComponent  implements OnInit {
   protected challenge: Challenge = this.gameService.getChallenge();
 
   constructor(
-    private gameService: GameService,
+    protected gameService: GameService,
     private router: Router,
   ) { }
 
@@ -33,5 +33,6 @@ export class GameComponent  implements OnInit {
       this.router.navigate(['/game/end']);
     }
     this.challenge = this.gameService.getChallenge();
+    this.gameService.setProgress();
   }
 }

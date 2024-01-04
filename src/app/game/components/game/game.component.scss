@@ -35,3 +35,14 @@
         background: rgb(68, 169, 68);
     }
 }
+
+.bar-ctn {
+    padding: 32px 16px 16px 16px;
+    ion-progress-bar {
+        width: 200px;
+        height: 8px;
+        border-radius: 10px;
+        --background: var(--secondary);
+        --progress-background: var(--primary);
+    }
+}

@@ -7,10 +7,11 @@ import { PlayerComponent } from './components/player/player.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GameComponent } from './components/game/game.component';
 import { IonicModule } from '@ionic/angular';
+import { EndComponent } from './components/end/end.component';
 
 
 @NgModule({
-  declarations: [PlayerComponent, GameComponent],
+  declarations: [PlayerComponent, GameComponent, EndComponent],
   imports: [
     CommonModule,
     GameRoutingModule,

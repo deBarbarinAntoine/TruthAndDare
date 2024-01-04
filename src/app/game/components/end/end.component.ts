@@ -12,7 +12,7 @@ export class EndComponent  implements OnInit {
   protected winner: Player = this.gameService.players[0];
 
   constructor(
-    private gameService: GameService,
+    protected gameService: GameService,
   ) { }
 
   ngOnInit() {

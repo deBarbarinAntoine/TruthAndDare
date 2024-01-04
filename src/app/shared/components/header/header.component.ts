@@ -1,4 +1,6 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { GameService } from 'src/app/game/services/game.service';
 
 @Component({
   selector: 'app-header',
@@ -7,8 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent  implements OnInit {
 
-  constructor() { }
+  constructor(
+    private location: Location,
+    private gameService: GameService
+  ) { }
 
   ngOnInit() {}
+
+  backButton() {
+    this.location.back();
+    this.gameService.replay();
+  }
 
 }

@@ -8,14 +8,18 @@ import { Challenge, ChallengeProps } from 'src/app/core/models/challenge';
   providedIn: 'root'
 })
 export class GameService {
-
+  public progress: number = 0;
   public players: Player[] = JSON.parse(localStorage.getItem('players') || '[]');
   public challenges: Challenge[] = jsonChallenge.map((challengeProps: ChallengeProps) => Challenge.create(challengeProps));
-  private playerTurn: number = 0;
-  private challengesDone: Challenge[] = [];
+  public playerTurn: number = 0;
+  public challengesDone: Challenge[] = [];
   private end: number = 5;
 
   constructor() { }
+
+  setProgress() {
+    this.progress = this.challengesDone.length / this.end;
+  }
 
   initializePlayers(playersName: any[]) {
     this.players = [];
@@ -63,5 +67,14 @@ export class GameService {
       [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
     }
     return array
+  }
+  
+  replay() {
+    this.challengesDone = [];
+    this.playerTurn = 0;
+    this.progress = 0;
+    this.players.forEach((player: Player) => {
+      player.score = 0;
+    });
   }
 }

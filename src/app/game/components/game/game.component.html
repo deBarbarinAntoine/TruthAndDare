@@ -1,4 +1,7 @@
 <div class="challenge-ctn f-center">
+  <div class="bar-ctn">
+    <ion-progress-bar [value]="gameService.progress"></ion-progress-bar>
+  </div>
   <div class="challenge f-center">
     <div class="type">
       {{ challenge.props.type }}

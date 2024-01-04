@@ -45,6 +45,10 @@
     padding: 0;
 }
 
+app-header {
+    z-index: 10000;
+}
+
 body {
     background: var(--b);
     color: var(--t);
@@ -54,4 +58,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+button[type="submit"], .replay {
+    width: 150px;
+    font-size: 1.5em;
+    padding: 16px;
+    border-radius: 20px;
+    background-color: var(--primary);
+    color: var(--t);
 }
